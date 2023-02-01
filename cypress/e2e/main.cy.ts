@@ -1,6 +1,6 @@
 import { cy, expect, it, describe, beforeEach } from 'local-cypress'
 
-import { componentStyles } from '@/styles/components.style';
+import { componentStyles } from '../../src/styles/component.styles';
 
 const { dailyHourlySwitcher } = componentStyles;
 
