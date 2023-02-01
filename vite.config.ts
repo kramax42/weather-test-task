@@ -9,6 +9,9 @@ export default defineConfig({
   preview: {
     port: 3000,
   },
+  server: {
+    port: 8000,
+  },
   plugins: [
     react(),
     svgr(),
