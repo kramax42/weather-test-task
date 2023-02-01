@@ -26,13 +26,13 @@ jobs:
     - name: test:jest
       run: yarn run test
     - name: Cypress run
-        uses: cypress-io/github-action@v3
-        with:
-          project: ./
-          browser: chrome
-          build: yarn build
-          start: yarn preview
-          wait-on: "http://localhost:3000"
+      uses: cypress-io/github-action@v3
+      with:
+        project: ./
+        browser: chrome
+        build: yarn build
+        start: yarn preview
+        wait-on: "http://localhost:3000"
     - name: typescript
       run: yarn run type-check
     - name: build
