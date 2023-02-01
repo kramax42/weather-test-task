@@ -49,7 +49,7 @@ const currentWeatherSlice = createSlice({
       state,
       action: PayloadAction<WeatherApiVariant>,
     ) => {
-      state[`${action.payload}`].lastRequestDate = getCurrentDate();
+      state[action.payload].lastRequestDate = getCurrentDate();
     },
     resetLastCurrentWeatherRequestDate: (state) => {
       state.meteosource.lastRequestDate = getOutdatedRequestDate();
@@ -61,7 +61,7 @@ const currentWeatherSlice = createSlice({
       action: PayloadAction<RequestStatusPayload>,
     ) => {
       const { status, apiVariant } = action.payload;
-      state[`${apiVariant}`].status = status;
+      state[apiVariant].status = status;
     },
     setCurrentWeather: (
       state,

@@ -46,7 +46,7 @@ const forecastReducerSlice = createSlice({
       action: PayloadAction<RequestStatusPayload>,
     ) => {
       const { status, apiVariant } = action.payload;
-      state[`${apiVariant}`].status = status;
+      state[apiVariant].status = status;
     },
     setDailyForecastActive: (state) => {
       state.isDailyActive = true;
@@ -56,26 +56,26 @@ const forecastReducerSlice = createSlice({
     },
     setDailyForecast: (state, action: PayloadAction<DailyForecastPayload>) => {
       const { daily, apiVariant } = action.payload;
-      state[`${apiVariant}`].daily = daily;
+      state[apiVariant].daily = daily;
     },
     setHourlyForecast: (
       state,
       action: PayloadAction<HourlyForecastPayload>,
     ) => {
       const { hourly, apiVariant } = action.payload;
-      state[`${apiVariant}`].hourly = hourly;
+      state[apiVariant].hourly = hourly;
     },
     updateLastRequestHourlyDate: (
       state,
       action: PayloadAction<WeatherApiVariant>,
     ) => {
-      state[`${action.payload}`].lastRequestHourlyDate = getCurrentDate();
+      state[action.payload].lastRequestHourlyDate = getCurrentDate();
     },
     updateLastRequestDailyDate: (
       state,
       action: PayloadAction<WeatherApiVariant>,
     ) => {
-      state[`${action.payload}`].lastRequestDailyDate = getCurrentDate();
+      state[action.payload].lastRequestDailyDate = getCurrentDate();
     },
     resetForecastRequestDate: (state) => {
       state.openweather.lastRequestDailyDate = getOutdatedRequestDate();
