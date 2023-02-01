@@ -1,6 +1,6 @@
 import { Location } from '@/types/common';
 
-export interface ISuggestedLocation {
+export interface SuggestedLocationProps {
   location: Location;
-  onClick: () => void;
+  onClickSuggestedLocation: () => void;
 }

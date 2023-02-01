@@ -1,14 +1,14 @@
 import { Text } from './suggested-location.styled';
-import { ISuggestedLocation } from './suggested-location.types';
+import { SuggestedLocationProps } from './suggested-location.types';
 
 export function SuggestedLocation({
   location,
-  onClick,
-}: ISuggestedLocation): JSX.Element {
+  onClickSuggestedLocation,
+}: SuggestedLocationProps): JSX.Element {
   const { city, country } = location;
 
   return (
-    <Text onClick={onClick}>
+    <Text onClick={onClickSuggestedLocation}>
       {city}, {country}
     </Text>
   );
