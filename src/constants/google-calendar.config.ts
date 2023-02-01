@@ -1,7 +1,7 @@
 import { apiTokens } from './api-tokens';
 import { urls } from './api-urls';
 
-export const MAX_CALENDAR_EVENTS_DISPLAY = 15;
+export const MAX_CALENDAR_EVENTS_DISPLAY = 10;
 
 export const apiCalendarConfig = {
   clientId: apiTokens.googleCliendId,

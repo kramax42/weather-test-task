@@ -56,7 +56,7 @@ export const CURRENT_WEATHER_EXTENDED_ITEMS = {
   windSpeed: {
     title: 'wind',
     iconName: 'wind',
-    unit: 'km/h',
+    unit: 'm/s',
   },
   minTemp: {
     title: 'min temperature',
