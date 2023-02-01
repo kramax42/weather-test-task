@@ -1,5 +1,6 @@
-import { locationSelector } from '@store/selectors';
 import { useSelector } from 'react-redux';
+
+import { locationSelector } from '@/store/selectors';
 
 import { CurrentLocationLoader } from './current-location.loader';
 import { Container, Location } from './current-location.styled';

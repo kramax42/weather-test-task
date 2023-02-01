@@ -1,10 +1,10 @@
-import {
-  currentWeatherSelector,
-  weatherApiVariantSelector,
-} from '@store/selectors';
 import { useSelector } from 'react-redux';
 
 import { CURRENT_WEATHER_EXTENDED_ITEMS } from '@/constants/weather.config';
+import {
+  currentWeatherSelector,
+  weatherApiVariantSelector,
+} from '@/store/selectors';
 
 import {
   Column,

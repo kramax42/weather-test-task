@@ -39,7 +39,7 @@ export default defineConfig({
   //       find: '@constants',
   //       replacement: path.resolve(__dirname, 'src', 'constants'),
   //     },
-  //     { find: '@store', replacement: path.resolve(__dirname, 'src', 'store') },
+  //     { find: '@/store', replacement: path.resolve(__dirname, 'src', 'store') },
   //     { find: '@utils', replacement: path.resolve(__dirname, 'src', 'utils') },
   //     { find: '@hooks', replacement: path.resolve(__dirname, 'src', 'hooks') },
   //   ],

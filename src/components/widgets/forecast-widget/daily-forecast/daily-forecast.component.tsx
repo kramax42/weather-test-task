@@ -1,5 +1,6 @@
-import { forecastSelector, weatherApiVariantSelector } from '@store/selectors';
 import { useSelector } from 'react-redux';
+
+import { forecastSelector, weatherApiVariantSelector } from '@/store/selectors';
 
 import { ForecastItem } from '../forecast-item';
 

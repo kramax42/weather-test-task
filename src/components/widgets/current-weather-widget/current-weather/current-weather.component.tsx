@@ -1,8 +1,9 @@
+import { useSelector } from 'react-redux';
+
 import {
   currentWeatherSelector,
   weatherApiVariantSelector,
-} from '@store/selectors';
-import { useSelector } from 'react-redux';
+} from '@/store/selectors';
 
 import { CurrentWeatherLoader } from './current-weather.loader';
 import {
