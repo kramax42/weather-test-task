@@ -7,20 +7,20 @@ import {
   HourlyWeather,
   RequestStatusPayload,
 } from '@/types/store';
-import { getCurrentDate, getStaleDate } from '@/utils/get-date';
+import { getCurrentDate, getOutdatedRequestDate } from '@/utils/get-date';
 
 const initialState: ForecastState = {
   isDailyActive: true,
   openweather: {
-    lastRequestHourlyDate: getStaleDate(),
-    lastRequestDailyDate: getStaleDate(),
+    lastRequestHourlyDate: getOutdatedRequestDate(),
+    lastRequestDailyDate: getOutdatedRequestDate(),
     daily: [],
     hourly: [],
     status: 'idle',
   },
   meteosource: {
-    lastRequestHourlyDate: getStaleDate(),
-    lastRequestDailyDate: getStaleDate(),
+    lastRequestHourlyDate: getOutdatedRequestDate(),
+    lastRequestDailyDate: getOutdatedRequestDate(),
     daily: [],
     hourly: [],
     status: 'idle',
@@ -78,10 +78,10 @@ const forecastReducerSlice = createSlice({
       state[`${action.payload}`].lastRequestDailyDate = getCurrentDate();
     },
     resetForecastRequestDate: (state) => {
-      state.openweather.lastRequestDailyDate = getStaleDate();
-      state.openweather.lastRequestHourlyDate = getStaleDate();
-      state.meteosource.lastRequestDailyDate = getStaleDate();
-      state.meteosource.lastRequestHourlyDate = getStaleDate();
+      state.openweather.lastRequestDailyDate = getOutdatedRequestDate();
+      state.openweather.lastRequestHourlyDate = getOutdatedRequestDate();
+      state.meteosource.lastRequestDailyDate = getOutdatedRequestDate();
+      state.meteosource.lastRequestHourlyDate = getOutdatedRequestDate();
     },
   },
 });

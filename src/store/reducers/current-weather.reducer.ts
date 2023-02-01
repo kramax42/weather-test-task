@@ -6,11 +6,11 @@ import {
   CurrentWeatherState,
   RequestStatusPayload,
 } from '@/types/store';
-import { getCurrentDate, getStaleDate } from '@/utils/get-date';
+import { getCurrentDate, getOutdatedRequestDate } from '@/utils/get-date';
 
 const initialState: CurrentWeatherState = {
   openweather: {
-    lastRequestDate: getStaleDate(),
+    lastRequestDate: getOutdatedRequestDate(),
     status: 'idle',
     icon: 'clear-day',
     temperature: 33,
@@ -25,7 +25,7 @@ const initialState: CurrentWeatherState = {
     },
   },
   meteosource: {
-    lastRequestDate: getStaleDate(),
+    lastRequestDate: getOutdatedRequestDate(),
     status: 'idle',
     icon: 'clear-night',
     temperature: 22,
@@ -52,8 +52,8 @@ const currentWeatherSlice = createSlice({
       state[`${action.payload}`].lastRequestDate = getCurrentDate();
     },
     resetLastCurrentWeatherRequestDate: (state) => {
-      state.meteosource.lastRequestDate = getStaleDate();
-      state.openweather.lastRequestDate = getStaleDate();
+      state.meteosource.lastRequestDate = getOutdatedRequestDate();
+      state.openweather.lastRequestDate = getOutdatedRequestDate();
     },
 
     setCurrentWeatherRequestStatus: (
