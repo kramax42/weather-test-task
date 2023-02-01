@@ -30,7 +30,10 @@ export function SearchLocationWidget() {
     input,
     INPUT_DEBOUNCE_DURATION_MS,
   );
-  const [isInputChangedOnce, setIsInputChangedOnce] = useState<boolean>(false);
+  const [
+    isSuggestedLocationsShouldDisplay,
+    setIsSuggestedLocationsShouldDisplay,
+  ] = useState<boolean>(false);
 
   const containerRef = useRef(null);
 
@@ -43,10 +46,15 @@ export function SearchLocationWidget() {
   const onChangeCityInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInput(event.target.value);
 
-    if (!isInputChangedOnce) {
-      setIsInputChangedOnce(true);
+    if (!isSuggestedLocationsShouldDisplay) {
+      setIsSuggestedLocationsShouldDisplay(true);
     }
   };
+
+  useEffect(() => {
+    setInput(city);
+    setIsSuggestedLocationsShouldDisplay(false);
+  }, [city]);
 
   useEffect(() => {
     if (debouncedInput) {
@@ -111,7 +119,7 @@ export function SearchLocationWidget() {
         onKeyDown={onKeyDownEnter}
       />
 
-      {isLocationsFound() && isInputChangedOnce && (
+      {isLocationsFound() && isSuggestedLocationsShouldDisplay && (
         <SuggestedLocations>
           {suggestedLocations.map((suggestedLocation) => (
             <SuggestedLocation
@@ -125,7 +133,7 @@ export function SearchLocationWidget() {
         </SuggestedLocations>
       )}
 
-      {isLocationsNotFound() && isInputChangedOnce && (
+      {isLocationsNotFound() && isSuggestedLocationsShouldDisplay && (
         <SuggestedLocationsNotFound>
           <NotFound>Location not found</NotFound>
         </SuggestedLocationsNotFound>
