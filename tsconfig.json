@@ -18,7 +18,7 @@
     "esModuleInterop": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["./src", ".eslintrc.js", "./cypress"],
+  "include": ["./src", ".eslintrc.js"],
   "exclude": ["./cypress.config.ts"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "extends": "./tsconfig.paths.json"
