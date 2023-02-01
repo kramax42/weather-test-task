@@ -1,0 +1,35 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:react/jsx-runtime"
+  ],
+  "plugins": ["@typescript-eslint", "react", "jsx-a11y", "simple-import-sort", "prettier"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  
+  "ignorePatterns": "*.config.ts",
+  "rules": {
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "prettier/prettier": ["error", {}, { "usePrettierrc": true }],
+    "import/prefer-default-export": "off",
+    "import/extensions" : "off",
+    "no-param-reassign": ["error", { "props": false }],
+    "react/jsx-props-no-spreading": "off",
+    "@typescript-eslint/naming-convention": "off",
+    "consistent-return": "off"
+  }
+}

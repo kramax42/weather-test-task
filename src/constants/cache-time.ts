@@ -1,0 +1,1 @@
+export const API_REQUEST_CACHE_TIME_IN_MINUTES = 1;

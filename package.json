@@ -1,0 +1,101 @@
+{
+  "name": "react-weather",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "build": "vite build",
+    "cm": "cz",
+    "dev": "vite",
+    "lint": "yarn lint:format && yarn lint:fix ",
+    "lint:css": "stylelint \"./src/**/*.styled.ts\" --fix",
+    "lint:fix": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
+    "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
+    "prepare": "husky install",
+    "preview": "vite preview",
+    "test": "jest",
+    "test:all": "yarn test:jest && yarn test:cypress",
+    "test:cypress": "yarn cypress run",
+    "test:cypress:open": "yarn cypress open",
+    "type-check": "tsc"
+  },
+  "lint-staged": {
+    "./src/**/*.{css,md,json,ts,tsx}": [
+      "stylelint"
+    ],
+    "*.ts?(x)": [
+      "eslint",
+      "cross-env CI=true yarn test --bail --findRelatedTests"
+    ],
+    "package.json": "npx sort-package-json"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.1",
+    "axios": "^1.2.1",
+    "date-fns": "^2.29.3",
+    "react": "^18.2.0",
+    "react-content-loader": "^6.2.0",
+    "react-dom": "^18.2.0",
+    "react-google-calendar-api": "^2.1.0",
+    "react-redux": "^7.2.6",
+    "redux-persist": "^6.0.0",
+    "redux-saga": "^1.2.1",
+    "styled-components": "^5.3.3",
+    "uniqid": "^5.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@stylelint/postcss-css-in-js": "^0.38.0",
+    "@types/jest": "^27.4.1",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@types/redux-saga": "^0.10.5",
+    "@types/styled-components": "^5.1.23",
+    "@types/uniqid": "^5.3.2",
+    "@typescript-eslint/eslint-plugin": "5.12.1",
+    "@typescript-eslint/parser": "5.12.1",
+    "@vitejs/plugin-react": "^3.0.1",
+    "babel-jest": "^27.5.1",
+    "commitizen": "^4.2.4",
+    "cross-env": "^7.0.3",
+    "cypress": "^12.4.1",
+    "eslint": "8.9.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-typescript": "16.1.0",
+    "eslint-config-prettier": "8.4.0",
+    "eslint-plugin-import": "2.25.4",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-react": "^7.32.1",
+    "eslint-plugin-react-hooks": "4.3.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "^7.0.4",
+    "jest": "^27.5.1",
+    "lint-staged": "12.3.4",
+    "local-cypress": "^1.2.6",
+    "postinstall-postinstall": "^2.1.0",
+    "prettier": "2.5.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "stylelint": "^14.5.3",
+    "stylelint-config-recommended": "^7.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.4",
+    "vite-plugin-commonjs": "^0.6.1",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-dynamic-import": "^1.2.7",
+    "vite-plugin-fonts": "^0.7.0",
+    "vite-plugin-svgr": "^2.4.0",
+    "vite-tsconfig-paths": "^4.0.5"
+  }
+}

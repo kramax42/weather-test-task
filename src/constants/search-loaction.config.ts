@@ -1,0 +1,2 @@
+export const INPUT_DEBOUNCE_DURATION_MS = 300;
+export const MAX_SUGGESTED_LOCATIONS = 5;
