@@ -1,6 +1,5 @@
 import { SearchParams } from '@/types/common';
-
-import { createUrl, formatUrlParams } from '../../utils/format-url-params';
+import { createUrl, formatUrlParams } from '@/utils/format-url-params';
 
 describe('format url functions', () => {
   const searchParams: SearchParams = {
