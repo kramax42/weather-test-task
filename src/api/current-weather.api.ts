@@ -3,10 +3,9 @@ import axios from 'axios';
 import { apiTokens } from '@/constants/api-tokens';
 import { urls } from '@/constants/api-urls';
 import { Coords, WeatherApiVariant } from '@/types/common';
+import { CurrentWeatherResponseMeteosource } from '@/types/weather-api/meteosource.types';
+import { CurrentWeatherResponseOpenweather } from '@/types/weather-api/openweather.types';
 import { createUrl } from '@/utils/format-url-params';
-
-import { CurrentWeatherResponseMeteosource } from '../types/weather-api/meteosource.types';
-import { CurrentWeatherResponseOpenweather } from '../types/weather-api/openweather.types';
 
 export const getCurrentWeather = async (
   geoPosition: Coords,

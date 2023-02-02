@@ -9,9 +9,8 @@ import {
   HourlyForecastResponse,
   HourlyForecastResponseMeteosource,
 } from '@/types/weather-api/meteosource.types';
+import { ForecastResponseOpenweather } from '@/types/weather-api/openweather.types';
 import { createUrl } from '@/utils/format-url-params';
-
-import { ForecastResponseOpenweather } from '../types/weather-api/openweather.types';
 
 export const getDailyWeather = async (
   geoPosition: Coords,
