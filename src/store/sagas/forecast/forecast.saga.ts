@@ -32,7 +32,7 @@ import { UPDATE_FORECAST } from './forecast.action';
 function* updateForecastWorker(): SagaIterator {
   const { latitude, longitude } = yield select(locationSelector);
 
-  const geoCoords: Coords = {
+  const coords: Coords = {
     latitude,
     longitude,
   };
@@ -55,7 +55,7 @@ function* updateForecastWorker(): SagaIterator {
         try {
           const dailyWeather: DailyForecastResponse = yield call(
             getDailyWeather,
-            geoCoords,
+            coords,
             apiVariant,
           );
 
@@ -87,7 +87,7 @@ function* updateForecastWorker(): SagaIterator {
         try {
           const hourlyForecast: HourlyForecastResponse = yield call(
             getHourlyWeather,
-            geoCoords,
+            coords,
             apiVariant,
           );
 
