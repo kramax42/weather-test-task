@@ -28,6 +28,14 @@ export function CurrentWeather(): JSX.Element {
     );
   }
 
+  if (status === 'failed') {
+    return (
+      <Container>
+        <Temperature>Error</Temperature>
+      </Container>
+    );
+  }
+
   return (
     <Container>
       <Temperature>{temperature}°C</Temperature>

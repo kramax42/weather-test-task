@@ -79,7 +79,6 @@ function* updateCurrentWeatherWorker() {
         );
       }
     }
-    yield put(setCurrentWeatherRequestStatus({ status: 'idle', apiVariant }));
   }
 }
 
