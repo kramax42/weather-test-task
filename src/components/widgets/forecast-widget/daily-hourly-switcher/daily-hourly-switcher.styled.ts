@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { TRANSITION_DURATION_MS } from '@/styles/animation';
+import { TRANSITION_DURATION_MS } from '@/constants/animation';
 import { componentStyles } from '@/styles/component.styles';
 import { getTumblerTranslateX } from '@/utils/get-tumbler-translate';
 

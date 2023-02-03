@@ -1,17 +1,20 @@
 import { css } from 'styled-components';
 
-export const TRANSITION_DURATION_MS = 300;
-export const FADE_IN_ANIAMTION_DURATION_MS = 500;
+import {
+  FADE_IN_ANIMATION_DURATION_MS,
+  FADE_IN_END_OPACITY,
+  FADE_IN_START_OPACITY,
+} from '@/constants/animation';
 
 export const fadeInAnimation = css`
   @keyframes fadeIn {
     0% {
-      opacity: 0;
+      opacity: ${FADE_IN_START_OPACITY};
     }
     100% {
-      opacity: 1;
+      opacity: ${FADE_IN_END_OPACITY};
     }
   }
 
-  animation: fadeIn ease-in-out ${FADE_IN_ANIAMTION_DURATION_MS}ms;
+  animation: fadeIn ease-in-out ${FADE_IN_ANIMATION_DURATION_MS}ms;
 `;

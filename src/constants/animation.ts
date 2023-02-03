@@ -1,0 +1,5 @@
+export const TRANSITION_DURATION_MS = 300;
+export const FADE_IN_ANIMATION_DURATION_MS = 500;
+
+export const FADE_IN_START_OPACITY = 0;
+export const FADE_IN_END_OPACITY = 1;
