@@ -17,7 +17,7 @@ export function Background() {
     <>
       <BackgroundStyled
         src={getBackgroundImage(weatherVariant, 'xxl')}
-        alt="alt-image"
+        alt={`${weatherVariant}-image`}
         srcSet={`
          ${getBackgroundImage(weatherVariant, 'sm')} ${srcSetSizes.sm}w,
          ${getBackgroundImage(weatherVariant, 'md')} ${srcSetSizes.md}w,
