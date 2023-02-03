@@ -78,10 +78,11 @@ const forecastReducerSlice = createSlice({
       state[action.payload].lastRequestDailyDate = getCurrentDate();
     },
     resetForecastRequestDate: (state) => {
-      state.openweather.lastRequestDailyDate = getOutdatedRequestDate();
-      state.openweather.lastRequestHourlyDate = getOutdatedRequestDate();
-      state.meteosource.lastRequestDailyDate = getOutdatedRequestDate();
-      state.meteosource.lastRequestHourlyDate = getOutdatedRequestDate();
+      const outdatedRequestDate = getOutdatedRequestDate();
+      state.openweather.lastRequestDailyDate = outdatedRequestDate;
+      state.openweather.lastRequestHourlyDate = outdatedRequestDate;
+      state.meteosource.lastRequestDailyDate = outdatedRequestDate;
+      state.meteosource.lastRequestHourlyDate = outdatedRequestDate;
     },
   },
 });
