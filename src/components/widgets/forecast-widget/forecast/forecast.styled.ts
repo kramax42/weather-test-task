@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import { colors } from '@/styles/colors';
 import { componentStyles } from '@/styles/component-styles';
 import { below } from '@/styles/screens';
 import { spaces } from '@/styles/sizes';
@@ -17,4 +18,8 @@ export const Container = styled.div`
     justify-content: space-between;
     gap: ${spaces[4]}px;
   `}
+`;
+
+export const ErrorMessage = styled.p`
+  color: ${colors.transparent.light};
 `;
