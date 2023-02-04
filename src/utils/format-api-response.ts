@@ -1,3 +1,6 @@
+import axios from 'axios';
+
+import { locationApi } from '@/api/location.api';
 import { FormattedCurrentWeatherResponse } from '@/types/api';
 import { Location, WeatherApiVariant } from '@/types/common';
 import { LocationByNameResponseOpenweather } from '@/types/location-api/location-openweather';
@@ -160,4 +163,15 @@ export const formatOpenWeatherLocationResponse = (
         country,
       } as Location),
   );
+};
+
+export const getFormattedSuggestionLocationResponse = async (
+  searchText: string,
+) => {
+  try {
+    const data = await locationApi.getSuggestedLocations(searchText);
+    return formatOpenWeatherLocationResponse(data);
+  } catch (error) {
+    return [];
+  }
 };

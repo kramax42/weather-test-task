@@ -2,12 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import uniqid from 'uniqid';
 
-import { locationApi } from '@/api/location.api';
 import { INPUT_DEBOUNCE_DURATION_MS } from '@/constants/search-loaction.config';
 import { useDebounce, useOnClickOutside } from '@/hooks';
 import { updateLocation } from '@/store/sagas/location/location.action';
 import { locationSelector } from '@/store/selectors';
 import { Location } from '@/types/common';
+import { getFormattedSuggestionLocationResponse } from '@/utils/format-api-response';
 
 import {
   Container,
@@ -59,7 +59,7 @@ export function SearchLocationWidget() {
   useEffect(() => {
     if (debouncedInput) {
       (async () => {
-        const locations = await locationApi.getSuggestedLocations(
+        const locations = await getFormattedSuggestionLocationResponse(
           debouncedInput,
         );
         setSuggestedLocations(locations);

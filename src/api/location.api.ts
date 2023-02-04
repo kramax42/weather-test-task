@@ -38,7 +38,9 @@ export const locationApi = {
     };
   },
 
-  getSuggestedLocations: async (searchText: string): Promise<Location[]> => {
+  getSuggestedLocations: async (
+    searchText: string,
+  ): Promise<LocationByNameResponseOpenweather> => {
     const { openweathermapKey } = apiTokens;
     const { openwethermapLocations } = urls;
 
@@ -50,12 +52,8 @@ export const locationApi = {
     };
 
     const url = createUrl(baseUrl, requestParams);
+    const { data } = await axios.get<LocationByNameResponseOpenweather>(url);
 
-    try {
-      const { data } = await axios.get<LocationByNameResponseOpenweather>(url);
-      return formatOpenWeatherLocationResponse(data);
-    } catch (error) {
-      return [];
-    }
+    return data;
   },
 };
