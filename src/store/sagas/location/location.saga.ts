@@ -58,6 +58,11 @@ function* locationByCoordsWorker(action: PayloadAction<Coords>): SagaIterator {
       yield put(setLocationRequestStatus('succeeded'));
     } catch (error) {
       yield put(setLocationRequestStatus('failed'));
+      yield put(setLocationRequestStatus('failed'));
+      yield put(setForecastRequestStatus({ status: 'failed', apiVariant }));
+      yield put(
+        setCurrentWeatherRequestStatus({ status: 'failed', apiVariant }),
+      );
     }
   }
 }

@@ -6,7 +6,6 @@ import { MAX_SUGGESTED_LOCATIONS } from '@/constants/search-loaction.config';
 import { Coords, Location } from '@/types/common';
 import { GeoapifyLocationResponse } from '@/types/location-api/location-geoapify';
 import { LocationByNameResponseOpenweather } from '@/types/location-api/location-openweather';
-import { formatOpenWeatherLocationResponse } from '@/utils/format-api-response';
 import { createUrl } from '@/utils/format-url-params';
 
 export const locationApi = {

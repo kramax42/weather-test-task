@@ -16,6 +16,14 @@ export function CurrentLocation() {
     );
   }
 
+  if (status === 'failed') {
+    return (
+      <Container>
+        <Location>Location not available</Location>
+      </Container>
+    );
+  }
+
   return (
     <Container>
       {city && <Location>{`${city},`}</Location>}
