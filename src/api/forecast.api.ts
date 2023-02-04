@@ -14,7 +14,7 @@ import { ForecastResponseOpenweather } from '@/types/weather-api/openweather.typ
 import { createUrl } from '@/utils/format-url-params';
 
 export const getDailyWeather = async (
-  geoPosition: Coords,
+  { latitude, longitude }: Coords,
   apiVariant: WeatherApiVariant,
 ): Promise<DailyForecastResponse> => {
   if (apiVariant === 'meteosource') {
@@ -25,8 +25,8 @@ export const getDailyWeather = async (
     const requestParams = {
       sections: 'daily',
       language: 'en',
-      lat: geoPosition.latitude,
-      lon: geoPosition.longitude,
+      lat: latitude,
+      lon: longitude,
       units: UNITS_SYSTEM,
       key: meteosourceKey,
     };
@@ -42,8 +42,8 @@ export const getDailyWeather = async (
 
   const baseUrl = `${openweathermap}/forecast`;
   const requestParams = {
-    lat: geoPosition.latitude,
-    lon: geoPosition.longitude,
+    lat: latitude,
+    lon: longitude,
     units: UNITS_SYSTEM,
     appid: openweathermapKey,
   };
@@ -55,7 +55,7 @@ export const getDailyWeather = async (
 };
 
 export const getHourlyWeather = async (
-  geoPosition: Coords,
+  { latitude, longitude }: Coords,
   apiVariant: WeatherApiVariant,
 ): Promise<HourlyForecastResponse> => {
   if (apiVariant === 'openweather') {
@@ -64,8 +64,8 @@ export const getHourlyWeather = async (
 
     const baseUrl = `${openweathermap}/forecast`;
     const requestParams = {
-      lat: geoPosition.latitude,
-      lon: geoPosition.longitude,
+      lat: latitude,
+      lon: longitude,
       units: UNITS_SYSTEM,
       appid: openweathermapKey,
     };
@@ -83,8 +83,8 @@ export const getHourlyWeather = async (
   const requestParams = {
     sections: 'hourly',
     language: 'en',
-    lat: geoPosition.latitude,
-    lon: geoPosition.longitude,
+    lat: latitude,
+    lon: longitude,
     units: UNITS_SYSTEM,
     key: meteosourceKey,
   };
