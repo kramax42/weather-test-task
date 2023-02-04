@@ -72,7 +72,7 @@ interface CommonWeatherResponseMeteosource {
   lat: string;
   lon: string;
   timezone: string;
-  units: UNITS_SYSTEM | 'us' | 'uk' | 'ca';
+  units: 'metric' | 'us' | 'uk' | 'ca';
 }
 
 export interface CurrentWeatherResponseMeteosource
