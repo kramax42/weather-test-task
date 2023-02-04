@@ -4,7 +4,7 @@ import { apiTokens } from '@/constants/api-tokens';
 import { urls } from '@/constants/api-urls';
 import { MAX_SUGGESTED_LOCATIONS } from '@/constants/search-loaction.config';
 import { Coords, Location } from '@/types/common';
-import { GeoapifyLoactionResponse } from '@/types/location-api/location-geoapify';
+import { GeoapifyLocationResponse } from '@/types/location-api/location-geoapify';
 import { LocationByNameResponseOpenweather } from '@/types/location-api/location-openweather';
 import { formatOpenWeatherLocationResponse } from '@/utils/format-api-response';
 import { createUrl } from '@/utils/format-url-params';
@@ -26,7 +26,7 @@ export const locationApi = {
     };
 
     const url = createUrl(baseUrl, requestParams);
-    const { data } = await axios.get<GeoapifyLoactionResponse>(url);
+    const { data } = await axios.get<GeoapifyLocationResponse>(url);
 
     const { country, city, county, state } = data.results[0];
 

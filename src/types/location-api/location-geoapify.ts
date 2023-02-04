@@ -54,7 +54,7 @@ interface Query {
   };
 }
 
-export interface GeoapifyLoactionResponse {
+export interface GeoapifyLocationResponse {
   results: Result[];
   query: Query;
 }
