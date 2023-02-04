@@ -1,4 +1,3 @@
-import { CURRENT_WEATHER_EXTENDED_ITEMS } from '@/constants/weather.config';
 import { rootReducer } from '@/store/reducers/root.reducer';
 
 import {
