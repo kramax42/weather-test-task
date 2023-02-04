@@ -2,6 +2,7 @@ import axios from 'axios';
 
 import { apiTokens } from '@/constants/api-tokens';
 import { urls } from '@/constants/api-urls';
+import { UNITS_SYSTEM } from '@/constants/weather.config';
 import { Coords, WeatherApiVariant } from '@/types/common';
 import {
   DailyForecastResponse,
@@ -23,10 +24,10 @@ export const getDailyWeather = async (
     const baseUrl = meteosource;
     const requestParams = {
       sections: 'daily',
+      language: 'en',
       lat: geoPosition.latitude,
       lon: geoPosition.longitude,
-      units: 'metric',
-      language: 'en',
+      units: UNITS_SYSTEM,
       key: meteosourceKey,
     };
 
@@ -43,7 +44,7 @@ export const getDailyWeather = async (
   const requestParams = {
     lat: geoPosition.latitude,
     lon: geoPosition.longitude,
-    units: 'metric',
+    units: UNITS_SYSTEM,
     appid: openweathermapKey,
   };
 
@@ -65,7 +66,7 @@ export const getHourlyWeather = async (
     const requestParams = {
       lat: geoPosition.latitude,
       lon: geoPosition.longitude,
-      units: 'metric',
+      units: UNITS_SYSTEM,
       appid: openweathermapKey,
     };
 
@@ -81,10 +82,10 @@ export const getHourlyWeather = async (
   const baseUrl = meteosource;
   const requestParams = {
     sections: 'hourly',
+    language: 'en',
     lat: geoPosition.latitude,
     lon: geoPosition.longitude,
-    units: 'metric',
-    language: 'en',
+    units: UNITS_SYSTEM,
     key: meteosourceKey,
   };
 

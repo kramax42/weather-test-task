@@ -42,6 +42,8 @@ import storm920 from '@/assets/backgrounds/storm/storm-920.webp';
 import storm640 from '@/assets/backgrounds/storm/storm-640.webp';
 import storm360 from '@/assets/backgrounds/storm/storm-360.webp';
 
+export const UNITS_SYSTEM = 'metric';
+
 export const CURRENT_WEATHER_EXTENDED_ITEMS = {
   humidity: {
     title: 'humidity',

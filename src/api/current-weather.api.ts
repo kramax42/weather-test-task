@@ -2,6 +2,7 @@ import axios from 'axios';
 
 import { apiTokens } from '@/constants/api-tokens';
 import { urls } from '@/constants/api-urls';
+import { UNITS_SYSTEM } from '@/constants/weather.config';
 import { Coords, WeatherApiVariant } from '@/types/common';
 import { CurrentWeatherResponseMeteosource } from '@/types/weather-api/meteosource.types';
 import { CurrentWeatherResponseOpenweather } from '@/types/weather-api/openweather.types';
@@ -21,7 +22,7 @@ export const getCurrentWeather = async (
     const requestParams = {
       lat: geoPosition.latitude,
       lon: geoPosition.longitude,
-      units: 'metric',
+      units: UNITS_SYSTEM,
       appid: openweathermapKey,
     };
 
@@ -37,10 +38,10 @@ export const getCurrentWeather = async (
   const baseUrl = meteosource;
   const requestParams = {
     sections: 'current',
+    language: 'en',
     lat: geoPosition.latitude,
     lon: geoPosition.longitude,
-    units: 'metric',
-    language: 'en',
+    units: UNITS_SYSTEM,
     key: meteosourceKey,
   };
 

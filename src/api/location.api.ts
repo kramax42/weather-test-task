@@ -19,9 +19,9 @@ export const locationApi = {
 
     const baseUrl = geoapify;
     const requestParams = {
+      format: 'json',
       lat: latitude,
       lon: longitude,
-      format: 'json',
       apiKey: geoapifyKey,
     };
 
