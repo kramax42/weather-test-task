@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { fadeInAnimation } from '@/styles/animation';
 import { colors } from '@/styles/colors';
-import { componentStyles } from '@/styles/component.styles';
+import { componentStyles } from '@/styles/component-styles';
 import { below } from '@/styles/screens';
 import { spaces } from '@/styles/sizes';
 

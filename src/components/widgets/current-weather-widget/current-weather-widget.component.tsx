@@ -5,7 +5,7 @@ import { CurrentWeather } from '@/components/widgets/current-weather-widget/curr
 import { CurrentDate } from './current-date';
 import { CurrentLocation } from './current-location';
 import { Container, Content } from './current-weather-widget.styled';
-import { ExtendedWeather } from './extended-weather';
+import { ExtendedWeatherList } from './extended-weather-list';
 
 export function CurrentWeatherWidget(): JSX.Element {
   return (
@@ -18,7 +18,7 @@ export function CurrentWeatherWidget(): JSX.Element {
         <CurrentLocation />
         <CurrentWeather />
         <Divider />
-        <ExtendedWeather />
+        <ExtendedWeatherList />
       </Content>
     </Container>
   );

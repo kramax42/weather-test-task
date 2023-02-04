@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { SvgIcon } from '@/components/ui/svg-icon';
 import { fadeInAnimation } from '@/styles/animation';
-import { componentStyles } from '@/styles/component.styles';
+import { componentStyles } from '@/styles/component-styles';
 import { below } from '@/styles/screens';
 import { ISvgIcon } from '@/types/common';
 

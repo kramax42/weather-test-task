@@ -8,6 +8,7 @@ import {
 import { CurrentWeatherLoader } from './current-weather.loader';
 import {
   Container,
+  ErrorMessage,
   Row,
   Temperature,
   WeatherIcon,
@@ -31,7 +32,7 @@ export function CurrentWeather(): JSX.Element {
   if (status === 'failed') {
     return (
       <Container>
-        <Temperature>Error</Temperature>
+        <ErrorMessage>Current weather not available!</ErrorMessage>
       </Container>
     );
   }

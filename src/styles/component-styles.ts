@@ -154,6 +154,16 @@ export const componentStyles = {
         mobileL: 52,
       },
     },
+    errorMessage: {
+      color: {
+        text: colors.white,
+      },
+      fontSize: {
+        desktop: 28,
+        tablet: 22,
+        mobileL: 16,
+      },
+    },
     weatherVariant: {
       icon: {
         width: 40,

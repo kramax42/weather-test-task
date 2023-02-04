@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { SvgIcon } from '@/components/ui/svg-icon';
 import { TRANSITION_DURATION_MS } from '@/constants/animation';
-import { componentStyles, defaultStyles } from '@/styles/component.styles';
+import { componentStyles, defaultStyles } from '@/styles/component-styles';
 import { zIndexes } from '@/styles/sizes';
 
 const { input, searchIcon, searchButton, suggestedLocation } =

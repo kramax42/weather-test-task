@@ -2,12 +2,13 @@ import styled from 'styled-components';
 
 import { SvgIcon } from '@/components/ui/svg-icon';
 import { fadeInAnimation } from '@/styles/animation';
-import { componentStyles } from '@/styles/component.styles';
+import { componentStyles } from '@/styles/component-styles';
 import { below } from '@/styles/screens';
 import { spaces } from '@/styles/sizes';
 import { ISvgIcon } from '@/types/common';
 
-const { temperature, weatherVariant } = componentStyles.currentWeatherWidget;
+const { temperature, weatherVariant, errorMessage } =
+  componentStyles.currentWeatherWidget;
 
 export const Container = styled.div`
   display: flex;
@@ -29,6 +30,19 @@ export const Temperature = styled.p`
   `}
 
   ${fadeInAnimation}
+`;
+
+export const ErrorMessage = styled.p`
+  font-size: ${errorMessage.fontSize.desktop}px;
+  color: ${errorMessage.color.text};
+
+  ${below.tablet`
+    font-size: ${errorMessage.fontSize.tablet}px;
+  `}
+
+  ${below.mobileL`
+    font-size: ${errorMessage.fontSize.mobileL}px;
+  `}
 `;
 
 export const Row = styled.div`

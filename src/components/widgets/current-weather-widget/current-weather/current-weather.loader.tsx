@@ -1,6 +1,6 @@
 import ContentLoader from 'react-content-loader';
 
-import { defaultStyles } from '@/styles/component.styles';
+import { defaultStyles } from '@/styles/component-styles';
 
 const { contentLoader } = defaultStyles;
 

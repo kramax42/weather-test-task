@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { SvgIcon } from '@/components/ui/svg-icon';
-import { componentStyles, defaultStyles } from '@/styles/component.styles';
+import { componentStyles, defaultStyles } from '@/styles/component-styles';
 import { spaces } from '@/styles/sizes';
 
 const { icon } = defaultStyles;

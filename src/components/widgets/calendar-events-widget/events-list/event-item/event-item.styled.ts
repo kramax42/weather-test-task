@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { componentStyles } from '@/styles/component.styles';
+import { componentStyles } from '@/styles/component-styles';
 import { spaces } from '@/styles/sizes';
 
 const { eventItem } = componentStyles.calendarEvents;

@@ -1,3 +1,4 @@
+import { CURRENT_WEATHER_EXTENDED_ITEMS } from '@/constants/weather.config';
 import { rootReducer } from '@/store/reducers/root.reducer';
 
 import {
@@ -9,20 +10,24 @@ import {
 
 export type RootState = ReturnType<typeof rootReducer>;
 
+export interface ExtendedWeather {
+  humidity: number | null;
+  pressure: number | null;
+  feelsLike: number | null;
+  windSpeed: number | null;
+  minTemp: number | null;
+  maxTemp: number | null;
+}
+
+export type ExtendedWeatherItem = keyof ExtendedWeather;
+
 export interface CurrentWeatherObj {
   lastRequestDate: string;
   status: RequestStatus;
   icon: string;
   temperature: string | number | null;
   weatherVariant: WeatherVariant;
-  extended: {
-    humidity: number | null;
-    pressure: number | null;
-    feelsLike: number | null;
-    windSpeed: number | null;
-    minTemp: number | null;
-    maxTemp: number | null;
-  };
+  extended: ExtendedWeather;
 }
 
 export type CurrentWeatherState = Record<WeatherApiVariant, CurrentWeatherObj>;
@@ -34,7 +39,6 @@ export type CurrentWeatherPayload = Pick<
 
 export interface CalendarEventsState {
   isSignedIn: boolean;
-
   token: string | null;
   events: EventItem[];
 }

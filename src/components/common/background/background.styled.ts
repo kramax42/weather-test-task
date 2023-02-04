@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { fadeInAnimation } from '@/styles/animation';
-import { componentStyles } from '@/styles/component.styles';
+import { componentStyles } from '@/styles/component-styles';
 
 const { background, overlay } = componentStyles.appContainer;
 

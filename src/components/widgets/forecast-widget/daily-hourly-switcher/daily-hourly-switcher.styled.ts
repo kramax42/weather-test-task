@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { TRANSITION_DURATION_MS } from '@/constants/animation';
-import { componentStyles } from '@/styles/component.styles';
+import { componentStyles } from '@/styles/component-styles';
 import { getTumblerTranslateX } from '@/utils/get-tumbler-translate';
 
 import { SwitcherTitle } from './daily-hourly-switcher.types';

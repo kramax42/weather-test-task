@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { componentStyles, defaultStyles } from '@/styles/component.styles';
+import { componentStyles, defaultStyles } from '@/styles/component-styles';
 import { below } from '@/styles/screens';
 import { spaces } from '@/styles/sizes';
 
