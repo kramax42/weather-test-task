@@ -1,3 +1,4 @@
+import { SagaIterator } from 'redux-saga';
 import { call, put, select, takeEvery } from 'redux-saga/effects';
 
 import { getCurrentWeather } from '@/api/current-weather.api';
@@ -27,7 +28,7 @@ import { isCacheRequestOutdated } from '@/utils/is-cache-outdated';
 
 import { UPDATE_CURRENT_WEATHER } from './current-weather.action';
 
-function* updateCurrentWeatherWorker() {
+function* updateCurrentWeatherWorker(): SagaIterator {
   const { latitude, longitude } = yield select(locationSelector);
 
   const coords: Coords = {
