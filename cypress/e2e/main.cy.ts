@@ -14,7 +14,7 @@ describe('Weather App e2e tests', () => {
   })
   
   it('Location search should work', () => {
-    const DELAY = 3000;
+    const DELAY = 1000;
 
     cy.get('[data-test=search-location-input]').focus().clear().type('Berlin')
 
