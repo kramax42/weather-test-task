@@ -3,6 +3,7 @@ import axios from 'axios';
 import { apiTokens } from '@/constants/api-tokens';
 import { urls } from '@/constants/api-urls';
 import { UNITS_SYSTEM } from '@/constants/weather.config';
+import { CurrentWeatherResponse } from '@/types/api';
 import { Coords, WeatherApiVariant } from '@/types/common';
 import { CurrentWeatherResponseMeteosource } from '@/types/weather-api/meteosource.types';
 import { CurrentWeatherResponseOpenweather } from '@/types/weather-api/openweather.types';
@@ -11,9 +12,7 @@ import { createUrl } from '@/utils/format-url-params';
 export const getCurrentWeather = async (
   { latitude, longitude }: Coords,
   apiVariant: WeatherApiVariant,
-): Promise<
-  CurrentWeatherResponseOpenweather | CurrentWeatherResponseMeteosource
-> => {
+): Promise<CurrentWeatherResponse> => {
   if (apiVariant === 'openweather') {
     const { openweathermap } = urls;
     const { openweathermapKey } = apiTokens;
