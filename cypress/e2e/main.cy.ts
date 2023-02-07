@@ -13,26 +13,26 @@ describe('Weather App e2e tests', () => {
     cy.get('[data-test=search-location-input]').should('contain.value', 'Dubai');
   })
   
-  // it('Location search should work', () => {
-  //   const DELAY = 1000;
+  it('Location search should work', () => {
+    const DELAY = 1000;
 
-  //   cy.get('[data-test=search-location-input]').focus().clear().type('Berlin')
+    cy.get('[data-test=search-location-input]').focus().clear().type('Berlin')
 
-  //   cy.wait(DELAY);
-  //   cy.get('[data-test=search-location-input]').focus().type('{enter}');
+    cy.wait(DELAY);
+    cy.get('[data-test=search-location-input]').focus().type('{enter}');
 
-  //   cy.wait(DELAY);
-  //   cy.get('[data-test=location-country-text]').should('contain', 'Germany');
+    cy.wait(DELAY);
+    cy.get('[data-test=location-country-text]').should('contain', 'Germany');
 
-  //   cy.wait(DELAY);
-  //   cy.get('[data-test=search-location-input]').focus().clear().type('Paris')
+    cy.wait(DELAY);
+    cy.get('[data-test=search-location-input]').focus().clear().type('Paris')
 
-  //   cy.wait(DELAY);
-  //   cy.get('[data-test=search-location-button]').click();
+    cy.wait(DELAY);
+    cy.get('[data-test=search-location-button]').click();
 
-  //   cy.wait(DELAY);
-  //   cy.get('[data-test=location-country-text]').should('contain', 'France');
-  // })
+    cy.wait(DELAY);
+    cy.get('[data-test=location-country-text]').should('contain', 'France');
+  })
 
   it('Weather api select should work', () => {
     cy.get('[data-test=weather-api-select]')
