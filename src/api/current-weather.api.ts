@@ -9,7 +9,7 @@ import { CurrentWeatherResponseOpenweather } from '@/types/weather-api/openweath
 import { createUrl } from '@/utils/format-url-params';
 
 export const getCurrentWeather = async (
-  geoPosition: Coords,
+  { latitude, longitude }: Coords,
   apiVariant: WeatherApiVariant,
 ): Promise<
   CurrentWeatherResponseOpenweather | CurrentWeatherResponseMeteosource
@@ -20,8 +20,8 @@ export const getCurrentWeather = async (
 
     const baseUrl = `${openweathermap}/weather`;
     const requestParams = {
-      lat: geoPosition.latitude,
-      lon: geoPosition.longitude,
+      lat: latitude,
+      lon: longitude,
       units: UNITS_SYSTEM,
       appid: openweathermapKey,
     };
@@ -39,8 +39,8 @@ export const getCurrentWeather = async (
   const requestParams = {
     sections: 'current',
     language: 'en',
-    lat: geoPosition.latitude,
-    lon: geoPosition.longitude,
+    lat: latitude,
+    lon: longitude,
     units: UNITS_SYSTEM,
     key: meteosourceKey,
   };
